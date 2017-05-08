@@ -5,11 +5,14 @@ class User < ApplicationRecord
   DIGEST = OpenSSL::Digest::SHA256.new
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_USERNAME_REGEX = /\A[0-9a-zA-Z_]*\z/
+  VALID_BACKGROUNDCOLOR_REGEX = /\A[0-9a-fA-F]{6,6}\z/
+
 
   has_many :questions
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 40 }, format: { with: VALID_USERNAME_REGEX }
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
+  validates :background_color, presence: true, format: { with: VALID_BACKGROUNDCOLOR_REGEX }
 
   attr_accessor :password
 

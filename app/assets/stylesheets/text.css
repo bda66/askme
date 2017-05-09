@@ -18,9 +18,22 @@ a {
   margin-bottom: 12px;
 }
 
+.title-index {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: black 0 0 2px;
+}
+
 .title-small {
   font-size: 20px;
   margin-bottom: 6px;
+}
+
+.title-username {
+  font-size: 20px;
+  margin-bottom: 6px;
+  text-shadow: black 0 0 2px;
 }
 
 .text-lead {

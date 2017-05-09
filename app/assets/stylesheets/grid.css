@@ -19,6 +19,12 @@
   margin-top: 20px;
 }
 
+.index-buffer-both{
+  text-shadow: black 0 0 2px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
 .buffer-both-large {
   margin-bottom: 40px;
   margin-top: 40px;

@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 40 }, format: { with: VALID_USERNAME_REGEX }
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-  validates :background_color, presence: true, format: { with: VALID_BACKGROUNDCOLOR_REGEX }
+  validates :background_color, format: { with: VALID_BACKGROUNDCOLOR_REGEX }, on: :update
 
   attr_accessor :password
 

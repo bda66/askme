@@ -29,8 +29,8 @@
       </div>
 
       <div class="form-field">
-           <%= f.label 'Цвет фона профиля в hex без #', class: 'form-label'%>
-           <%= f.text_field :background_color, class: 'form-text-field' %>
+        <%= f.label 'Цвет фона профиля в hex без #', class: 'form-label'%>
+        <%= f.text_field :background_color, class: 'form-text-field' %>
       </div>
 
       <div class="buffer-top-large buffer-bottom">
@@ -51,10 +51,11 @@
         <%= f.submit 'Сохранить', class: 'button button-dark button-small' %>
       </div>
 
-      <div class="form-action buffer-top">
-        <%= button_to "Удалить профиль", user_path(@user), :method => :delete, data: {confirm: 'Точно удалить профиль?'} %>
-      </div>
-  </div>
     <% end %>
+
+    <div class="form-action buffer-top">
+      <%= button_to "Удалить профиль", user_path(@user), :method => :delete, data: {confirm: 'Точно удалить профиль?'} %>
+    </div>   
   </div>
+</div>
 </div>

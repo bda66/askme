@@ -11,7 +11,9 @@
     <% end %>
 
     <div class="question-date">
-      <%= l(question.created_at, format: :short) %>
+      <%= l(question.created_at, format: :short)%>
+      <%= 'спросил:' if question.questioning_user_id.present?%>
+      <%= link_to question.questioning_user.username, user_path(question.questioning_user_id) if question.questioning_user_id.present?%>
     </div>
   </div>
 

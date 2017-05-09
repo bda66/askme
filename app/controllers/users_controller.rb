@@ -43,6 +43,15 @@ before_action :authorize_user, except: [:index, :new, :create, :show]
     @unanswered_count = @questions_count - @answers_count
   end
 
+  def destroy
+    if current_user == @user
+      @user.destroy
+      redirect_to root_url, alert: 'Пользователь удален!'
+    else
+      redirect_to root_url, alert: 'Ошибка.'
+    end
+  end
+
   private
 
   def load_user

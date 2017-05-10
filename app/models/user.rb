@@ -5,7 +5,7 @@ class User < ApplicationRecord
   DIGEST = OpenSSL::Digest::SHA256.new
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_USERNAME_REGEX = /\A[0-9a-zA-Z_]*\z/
-  VALID_BACKGROUNDCOLOR_REGEX = /\A[0-9a-fA-F]{6,6}\z/
+  VALID_BACKGROUNDCOLOR_REGEX = /\A[#0-9a-fA-F]{7,7}\z/
 
 
   has_many :questions

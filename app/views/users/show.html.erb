@@ -1,4 +1,4 @@
-<div class="user-header text-center" style="background: #<%=@user.background_color%>">
+<div class="user-header text-center" style="background: <%= (@user.background_color) %>">
   <h1 class="title-index">
     <%= @user.name %>
   </h1>
@@ -18,7 +18,7 @@
 
 <div class="user-details">
   <div class="user-ask-button container text-center">
-    <%= link_to "Спроси меня", '', class: 'button button-light', id: 'ask-button' %>
+    <%= link_to 'Спроси меня', '', class: 'button button-light', id: 'ask-button' %>
   </div>
 
   <div class="user-statistics container text-center">

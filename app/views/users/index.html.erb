@@ -8,6 +8,7 @@
         <div class="user-image-div user-image-div-small">
           <%= link_to image_tag(user_avatar(user), class: 'user-image'), user_path(user) %>
         </div>
+          @<%= user.username %>
       </div>
   <% end %>
 </div>

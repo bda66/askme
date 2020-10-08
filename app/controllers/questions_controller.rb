@@ -1,11 +1,11 @@
-class QuestionsController < ApplicationController
+# frozen_string_literal: true
 
-  before_action :load_question, only: [:show, :edit, :update, :destroy]
+class QuestionsController < ApplicationController
+  before_action :load_question, only: %i[show edit update destroy]
   before_action :authorize_user, except: [:create]
 
   # GET /questions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /questions
   def create
@@ -36,20 +36,21 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+  # Use callbacks to share common setup or constraints between actions.
   def load_question
-      @question = Question.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def authorize_user
     reject_user unless @question.user == current_user
   end
 
-    # Only allow a trusted parameter "white list" through.
+  # Only allow a trusted parameter "white list" through.
   def question_params
     if current_user.present? &&
        params[:question][:user_id].to_i == current_user.id
-       params.require(:question).permit(:user_id, :text, :answer)
+      params.require(:question).permit(:user_id, :text, :answer)
     else
       params.require(:question).permit(:user_id, :text)
     end

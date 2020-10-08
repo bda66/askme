@@ -1,5 +1,6 @@
-class Question < ApplicationRecord
+# frozen_string_literal: true
 
+class Question < ApplicationRecord
   belongs_to :user
   belongs_to :questioning_user, class_name: 'User', optional: true
 
